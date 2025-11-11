@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadResumeBtn = document.getElementById('downloadResumeBtn');
     
     downloadResumeBtn.addEventListener('click', function() {
-        const resumeUrl = './assets/CV Resume.pdf';
+        const resumeUrl = './assets/Resume.pdf';
         const link = document.createElement('a');
         link.href = resumeUrl;
         link.download = 'AbdurayimHamidjon-Resume.pdf';
@@ -69,16 +69,16 @@ document.addEventListener('DOMContentLoaded', function() {
             skills: ["VanillaJS", "Node.js", "HTML", "CSS"]
         },
         {
-            position: "AI Trainer - Front-End Developer",
+            position: "AI Chatbot Interface Developer",
             company: "eBit Co., Ltd (South Korea)",
             duration: "April 2025 - June 2025",
             responsibilities: [
-                "Train AI models on front-end development best practices and patterns",
-                "Provide expertise in modern JavaScript frameworks and web technologies",
-                "Review and annotate code samples for AI training datasets",
-                "Collaborate with international team on AI-driven development tools"
+                "Building responsive AI Chatbot interface",
+                "Customizing React and NodeJS integration",
+                "Fetching tokens",
+                "Authorization and Authentification page"
             ],
-            skills: ["AI Training", "JavaScript", "React.js", "Front-End Development", "Code Review"]
+            skills: ["ReactJS", "NodeJS", "Git", "React Query", "Tailwind"]
         },
         {
             position: "Head IT Teacher",
