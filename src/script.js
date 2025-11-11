@@ -2,11 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     mobileMenuBtn.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
     });
-    
+
+    // Close mobile menu when a link is clicked
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
     // Resume download functionality
     const downloadResumeBtn = document.getElementById('downloadResumeBtn');
     
@@ -91,27 +99,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     experience.forEach((exp, index) => {
         const expItem = document.createElement('div');
-        expItem.className = 'bg-slate-900 rounded-xl p-8 shadow-lg border border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300';
+        expItem.className = 'bg-slate-900 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300';
         expItem.innerHTML = `
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold text-dark-green-400">${exp.position}</h3>
-                    <p class="text-dark-green-500 font-medium">${exp.company}</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-dark-green-400">${exp.position}</h3>
+                    <p class="text-sm sm:text-base text-dark-green-500 font-medium">${exp.company}</p>
                 </div>
-                <div class="bg-dark-green-800/50 text-dark-green-300 px-4 py-2 rounded-full self-start md:self-center border border-dark-green-700/50">
+                <div class="bg-dark-green-800/50 text-dark-green-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full self-start md:self-center border border-dark-green-700/50 text-xs sm:text-sm">
                     ${exp.duration}
                 </div>
             </div>
-            <ul class="mt-6 space-y-3">
-                ${exp.responsibilities.map(resp => 
+            <ul class="mt-4 sm:mt-6 space-y-2 sm:space-y-3">
+                ${exp.responsibilities.map(resp =>
                     `<li class="flex items-start">
-                        <i class="fas fa-check text-dark-green-400 mt-1 mr-3 bg-dark-green-800/30 p-1 rounded-full text-xs"></i>
-                        <span class="text-slate-200">${resp}</span>
+                        <i class="fas fa-check text-dark-green-400 mt-1 mr-2 sm:mr-3 bg-dark-green-800/30 p-1 rounded-full text-xs"></i>
+                        <span class="text-sm sm:text-base text-slate-200">${resp}</span>
                     </li>`
                 ).join('')}
             </ul>
-            <div class="mt-8 pt-6 border-t border-slate-800">
-                <h4 class="text-sm font-semibold text-slate-400 mb-3">TECHNOLOGIES USED:</h4>
+            <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-slate-800">
+                <h4 class="text-xs sm:text-sm font-semibold text-slate-400 mb-2 sm:mb-3">TECHNOLOGIES USED:</h4>
                 <div class="flex flex-wrap gap-2">
                     ${exp.skills.map(skill => 
                         `<span class="bg-dark-green-800/30 text-dark-green-300 text-xs px-3 py-2 rounded-lg border border-dark-green-700/30">${skill}</span>`
@@ -162,12 +170,12 @@ document.addEventListener('DOMContentLoaded', function() {
         projectCard.className = 'bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-800';
         projectCard.innerHTML = `
             <div class="relative overflow-hidden">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105">
+                <img src="${project.image}" alt="${project.title}" class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 hover:scale-105">
                 <div class="absolute inset-0 bg-slate-900/20 hover:bg-slate-900/10 transition-all duration-300"></div>
             </div>
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2 text-dark-green-400">${project.title}</h3>
-                <p class="text-slate-300 mb-4 leading-relaxed">${project.description}</p>
+            <div class="p-4 sm:p-6">
+                <h3 class="text-lg sm:text-xl font-bold mb-2 text-dark-green-400">${project.title}</h3>
+                <p class="text-sm sm:text-base text-slate-300 mb-4 leading-relaxed">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${project.technologies.map(tech => 
                         `<span class="bg-dark-green-800/30 text-dark-green-300 text-xs px-3 py-2 rounded-lg border border-dark-green-700/30">${tech}</span>`

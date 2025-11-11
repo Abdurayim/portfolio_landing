@@ -44,10 +44,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
         <!-- Header/Navigation -->
-        <header class="flex justify-between items-center mb-12 bg-slate-900 p-6 rounded-xl shadow-lg border border-slate-800">
-            <h1 class="text-3xl font-bold text-dark-green-400">My Portfolio</h1>
+        <header class="flex justify-between items-center mb-8 sm:mb-12 bg-slate-900 p-4 sm:p-6 rounded-xl shadow-lg border border-slate-800">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-dark-green-400">My Portfolio</h1>
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
                     <li><a href="#about" class="hover:text-dark-green-400 transition-colors duration-300 px-3 py-2 rounded-lg hover:bg-slate-800">About</a></li>
@@ -57,14 +57,14 @@
                     <li><a href="#contact" class="hover:text-dark-green-400 transition-colors duration-300 px-3 py-2 rounded-lg hover:bg-slate-800">Contact</a></li>
                 </ul>
             </nav>
-            <button id="mobileMenuBtn" class="md:hidden text-2xl hover:text-dark-green-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-800">
+            <button id="mobileMenuBtn" class="md:hidden text-xl sm:text-2xl hover:text-dark-green-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-800">
                 <i class="fas fa-bars"></i>
             </button>
         </header>
 
         <!-- Mobile Menu (hidden by default) -->
-        <div id="mobileMenu" class="hidden md:hidden mb-8 bg-slate-900 rounded-xl p-6 border border-slate-800">
-            <ul class="space-y-4">
+        <div id="mobileMenu" class="hidden md:hidden mb-6 sm:mb-8 bg-slate-900 rounded-xl p-4 sm:p-6 border border-slate-800">
+            <ul class="space-y-3 sm:space-y-4">
                 <li><a href="#about" class="block hover:text-dark-green-400 transition-colors duration-300 p-3 rounded-lg hover:bg-slate-800">About</a></li>
                 <li><a href="#experience" class="block hover:text-dark-green-400 transition-colors duration-300 p-3 rounded-lg hover:bg-slate-800">Experience</a></li>
                 <li><a href="#projects" class="block hover:text-dark-green-400 transition-colors duration-300 p-3 rounded-lg hover:bg-slate-800">Projects</a></li>
@@ -75,19 +75,86 @@
 
         <!-- Hero Section -->
         <section id="about" class="mb-16">
-            <div class="flex flex-col md:flex-row items-center bg-slate-900 rounded-xl p-8 shadow-lg border border-slate-800">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h2 class="text-4xl font-bold mb-4">Hi, I'm <span class="text-dark-green-400">Abdurayim Hamidjon</span></h2>
-                    <h3 class="text-2xl mb-4 text-dark-green-500">Full-Stack Developer</h3>
-                    <p class="text-slate-300 mb-6 text-lg">I build practical websites and telegram bots.</p>
-                    <button id="downloadResumeBtn" class="bg-dark-green-700 hover:bg-dark-green-600 text-white px-8 py-4 rounded-lg flex items-center transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <div class="flex flex-col md:flex-row items-center bg-slate-900 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-800">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Hi, I'm <span class="text-dark-green-400">Abdurayim Hamidjon</span></h2>
+                    <h3 class="text-xl sm:text-2xl mb-4 text-dark-green-500">Full-Stack Developer</h3>
+                    <p class="text-slate-300 mb-6 text-base sm:text-lg">I have been building practical websites and bots for 2 years</p>
+                    <button id="downloadResumeBtn" class="bg-dark-green-700 hover:bg-dark-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <i class="fas fa-download mr-3"></i> Download Resume
                     </button>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
                         <div class="absolute inset-0 bg-dark-green-600/20 rounded-full blur-xl"></div>
-                        <img src="./assets/prf.jpeg" alt="Profile" class="relative rounded-full w-64 h-64 object-cover border-4 border-dark-green-600/50 shadow-2xl">
+                        <img src="./assets/prf.jpeg" alt="Profile" class="relative rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover border-4 border-dark-green-600/50 shadow-2xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Section -->
+            <div class="mt-8 sm:mt-12 bg-slate-900 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-800">
+                <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-dark-green-400">Tech Stack</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+                    <!-- Go -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-golang text-3xl sm:text-4xl mb-2 text-cyan-400"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Go</span>
+                    </div>
+                    <!-- React -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-react text-3xl sm:text-4xl mb-2 text-cyan-400"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">React</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-js text-3xl sm:text-4xl mb-2 text-yellow-400"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">JavaScript</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-git-alt text-3xl sm:text-4xl mb-2 text-orange-500"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Git</span>
+                    </div>
+                    <!-- Cloud/VPS -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-cloud text-3xl sm:text-4xl mb-2 text-blue-400"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Cloud/VPS</span>
+                    </div>
+                    <!-- SQL -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-database text-3xl sm:text-4xl mb-2 text-blue-500"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">SQL</span>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-leaf text-3xl sm:text-4xl mb-2 text-green-500"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">MongoDB</span>
+                    </div>
+                    <!-- SQLite -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-database text-3xl sm:text-4xl mb-2 text-sky-500"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">SQLite</span>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-node-js text-3xl sm:text-4xl mb-2 text-green-600"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Node.js</span>
+                    </div>
+                    <!-- NPM -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fab fa-npm text-3xl sm:text-4xl mb-2 text-red-600"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">NPM</span>
+                    </div>
+                    <!-- Gin Framework -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-code text-3xl sm:text-4xl mb-2 text-cyan-500"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Gin</span>
+                    </div>
+                    <!-- Express -->
+                    <div class="flex flex-col items-center p-3 sm:p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-slate-700">
+                        <i class="fas fa-server text-3xl sm:text-4xl mb-2 text-slate-400"></i>
+                        <span class="text-xs sm:text-sm text-slate-300">Express</span>
                     </div>
                 </div>
             </div>
@@ -95,57 +162,57 @@
 
         <!-- Experience Section -->
         <section id="experience" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-center text-dark-green-400">Professional Experience</h2>
-            <div class="space-y-8" id="experienceContainer">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-dark-green-400">Professional Experience</h2>
+            <div class="space-y-6 sm:space-y-8" id="experienceContainer">
                 <!-- Experience items will be loaded here by JavaScript -->
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-center text-dark-green-400">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-dark-green-400">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8" id="projectsContainer">
                 <!-- Projects will be loaded here by JavaScript -->
             </div>
         </section>
 
         <!-- Achievements Section -->
         <section id="achievements" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-center text-dark-green-400">Live photos from Actions</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="achievementsContainer">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-dark-green-400">Live photos from Actions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="achievementsContainer">
                 <!-- Achievements will be loaded here by JavaScript -->
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 text-center text-dark-green-400">Get In Touch</h2>
-            <div class="max-w-lg mx-auto bg-slate-900 p-8 rounded-xl shadow-lg border border-slate-800">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-dark-green-400">Get In Touch</h2>
+            <div class="max-w-lg mx-auto bg-slate-900 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg border border-slate-800">
                 <form id="contactForm">
-                    <div class="mb-6">
-                        <label for="name" class="block mb-2 text-slate-300 font-medium">Name</label>
-                        <input type="text" id="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300">
+                    <div class="mb-4 sm:mb-6">
+                        <label for="name" class="block mb-2 text-sm sm:text-base text-slate-300 font-medium">Name</label>
+                        <input type="text" id="name" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300 text-sm sm:text-base">
                     </div>
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 text-slate-300 font-medium">Email</label>
-                        <input type="email" id="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300">
+                    <div class="mb-4 sm:mb-6">
+                        <label for="email" class="block mb-2 text-sm sm:text-base text-slate-300 font-medium">Email</label>
+                        <input type="email" id="email" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300 text-sm sm:text-base">
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="block mb-2 text-slate-300 font-medium">Message</label>
-                        <textarea id="message" rows="4" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300"></textarea>
+                    <div class="mb-4 sm:mb-6">
+                        <label for="message" class="block mb-2 text-sm sm:text-base text-slate-300 font-medium">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-green-600 text-slate-100 transition-all duration-300 text-sm sm:text-base"></textarea>
                     </div>
-                    <button type="submit" class="bg-dark-green-700 hover:bg-dark-green-600 text-white px-6 py-3 rounded-lg w-full transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:-translate-y-1">Send Message</button>
+                    <button type="submit" class="bg-dark-green-700 hover:bg-dark-green-600 text-white px-6 py-3 rounded-lg w-full transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base">Send Message</button>
                 </form>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center py-8 border-t border-slate-800 bg-slate-900 rounded-xl">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="https://github.com/Abdurayim" class="text-slate-400 hover:text-dark-green-400 transition-colors duration-300 p-3 rounded-lg hover:bg-slate-800"><i class="fab fa-github text-2xl"></i></a>
-                <a href="https://www.instagram.com/abdurayim_hamidjon?igsh=am5hMWxxbmYyamUy" class="text-slate-400 hover:text-dark-green-400 transition-colors duration-300 p-3 rounded-lg hover:bg-slate-800"><i class="fab fa-instagram text-2xl"></i></a>
+        <footer class="text-center py-6 sm:py-8 border-t border-slate-800 bg-slate-900 rounded-xl">
+            <div class="flex justify-center space-x-4 sm:space-x-6 mb-4">
+                <a href="https://github.com/Abdurayim" class="text-slate-400 hover:text-dark-green-400 transition-colors duration-300 p-2 sm:p-3 rounded-lg hover:bg-slate-800"><i class="fab fa-github text-xl sm:text-2xl"></i></a>
+                <a href="https://www.instagram.com/abdurayim_hamidjon?igsh=am5hMWxxbmYyamUy" class="text-slate-400 hover:text-dark-green-400 transition-colors duration-300 p-2 sm:p-3 rounded-lg hover:bg-slate-800"><i class="fab fa-instagram text-xl sm:text-2xl"></i></a>
             </div>
-            <p class="text-slate-400">&copy; 2024 My Portfolio. All rights reserved.</p>
+            <p class="text-slate-400 text-sm sm:text-base">&copy; 2024 My Portfolio. All rights reserved.</p>
         </footer>
     </div>
 
