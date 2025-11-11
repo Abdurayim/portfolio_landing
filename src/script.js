@@ -24,15 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Experience data - replace with your actual experience
     const experience = [
         {
-            position: "Junior Front-end Developer",
-            company: "Algoritm Education Center",
-            duration: "June 2024 - Oct 2024",
+            position: "Full Stack Developer",
+            company: "AL-fraganus freelancing team ",
+            duration: "April 2023 - Dec 2023",
             responsibilities: [
-                "Fetched backend authorization data and role based pages from backend",
-                "Helped the frontend team to implement a authentication system",
-                "Taught the main frontend team how to handle roles"
+                "Worked with team to increase our experience through github",
+                "Built a full stack application with a team of 5 to understand frontend and backend integration",
+                "Implemented RESTful APIs for data retrieval and manipulation",
+                "Used react to scale the application",
+                "Built location based telegram bots for food delivery cafes",
             ],
-            skills: ["VanillaJS", "Node.js", "HTML", "CSS"]
+            skills: ["HTML5", "jQuery", "Bootstrap", "MySQL", "Node.js", "Express.js", "React.js", "Redux", "Git"]
         },
         {
             position: "Full Stack Developer",
@@ -48,17 +50,39 @@ document.addEventListener('DOMContentLoaded', function() {
             skills: ["JavaScript", "MONGODB", "VPS", "ESKIZ.UZ", "NODEJS", "HTML", "CSS"]
         },
         {
-            position: "Full Stack Developer",
-            company: "AL-fraganus freelancing team ",
-            duration: "April 2023 - Dec 2023",
+            position: "Junior Front-end Developer",
+            company: "Algoritm Education Center",
+            duration: "June 2024 - Oct 2024",
             responsibilities: [
-                "Worked with team to increase our experience through github",
-                "Built a full stack application with a team of 5 to understand frontend and backend integration",
-                "Implemented RESTful APIs for data retrieval and manipulation",
-                "Used react to scale the application",
-                "Built location based telegram bots for food delivery cafes",
+                "Fetched backend authorization data and role based pages from backend",
+                "Helped the frontend team to implement a authentication system",
+                "Taught the main frontend team how to handle roles"
             ],
-            skills: ["HTML5", "jQuery", "Bootstrap", "MySQL", "Node.js", "Express.js", "React.js", "Redux", "Git"]
+            skills: ["VanillaJS", "Node.js", "HTML", "CSS"]
+        },
+        {
+            position: "AI Trainer - Front-End Developer",
+            company: "eBit Co., Ltd (South Korea)",
+            duration: "April 2025 - June 2025",
+            responsibilities: [
+                "Train AI models on front-end development best practices and patterns",
+                "Provide expertise in modern JavaScript frameworks and web technologies",
+                "Review and annotate code samples for AI training datasets",
+                "Collaborate with international team on AI-driven development tools"
+            ],
+            skills: ["AI Training", "JavaScript", "React.js", "Front-End Development", "Code Review"]
+        },
+        {
+            position: "Head IT Teacher",
+            company: "Anor International School",
+            duration: "August 2025 - Present",
+            responsibilities: [
+                "Teaching HTML, CSS, JavaScript, and Node.js to students",
+                "Preparing students for IT olympiads and programming competitions",
+                "Developing comprehensive curriculum for computer science courses",
+                "Mentoring students on practical web development projects"
+            ],
+            skills: ["HTML", "CSS", "JavaScript", "Node.js", "GO(Golang)"]
         }
     ];
     
@@ -118,14 +142,14 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Education Center Landing Page",
             description: "Simple landing page for an education center with course listings and contact form.",
             technologies: ["JavaScript", "HTML", "CSS","Tailwind CSS"],
-            image: "./assets/legacy.HEIC",
+            image: "./assets/legacy.jpg",
             link: "https://legacy-academy.onrender.com"
         },
         {
             title: "Google extension",
             description: "This extension extracts tables and turn them into excel",
             technologies: ["JavaScript", "Node.js"],
-            image: "./assets/tbte.png",
+            image: "./assets/extension.svg",
             link: "https://chromewebstore.google.com/detail/ckckjafhmkhdbmeiohkkhoajpagbnkmf?utm_source=item-share-cb"
         }
     ];
@@ -157,7 +181,85 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         projectsContainer.appendChild(projectCard);
     });
-    
+
+    // Achievements data
+    const achievements = [
+        {
+            title: "Web Development Certificate",
+            image: "./assets/achievements/cert1.jpg",
+            description: "Certificate of Achievement in Web Development",
+            type: "image"
+        },
+        {
+            title: "Achievement Highlight",
+            image: "./assets/achievements/photo_2025-11-10 22.44.44.jpeg",
+            description: "Professional Achievement",
+            type: "image"
+        },
+        {
+            title: "Recognition",
+            image: "./assets/achievements/photo_2025-11-10 22.44.50.jpeg",
+            description: "Award and Recognition",
+            type: "image"
+        },
+        {
+            title: "Accomplishment",
+            image: "./assets/achievements/photo_2025-11-10 22.44.59.jpeg",
+            description: "Milestone Achievement",
+            type: "image"
+        },
+        {
+            title: "Excellence Award",
+            image: "./assets/achievements/photo_2025-11-10 22.45.07.jpeg",
+            description: "Excellence in Performance",
+            type: "image"
+        },
+        {
+            title: "Achievement Showcase",
+            image: "./assets/achievements/vd.mp4",
+            description: "Video highlight of achievements",
+            type: "video"
+        }
+    ];
+
+    // Load achievements into the DOM
+    const achievementsContainer = document.getElementById('achievementsContainer');
+
+    achievements.forEach(achievement => {
+        const achievementCard = document.createElement('div');
+        achievementCard.className = 'group relative bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-800 cursor-pointer';
+
+        // Create different content for images vs videos
+        const mediaContent = achievement.type === 'video' ?
+            `<video src="${achievement.image}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loop muted playsinline></video>` :
+            `<img src="${achievement.image}" alt="${achievement.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">`;
+
+        achievementCard.innerHTML = `
+            <div class="aspect-[4/3] overflow-hidden">
+                ${mediaContent}
+            </div>
+        `;
+
+        // For videos, add hover to play and click to view
+        if (achievement.type === 'video') {
+            const video = achievementCard.querySelector('video');
+            achievementCard.addEventListener('mouseenter', function() {
+                video.play();
+            });
+            achievementCard.addEventListener('mouseleave', function() {
+                video.pause();
+                video.currentTime = 0;
+            });
+        }
+
+        // Add click to view full media
+        achievementCard.addEventListener('click', function() {
+            window.open(achievement.image, '_blank');
+        });
+
+        achievementsContainer.appendChild(achievementCard);
+    });
+
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
     
